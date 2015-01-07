@@ -4,12 +4,13 @@
   "description": "Example project for Tollan",
   "main": "index.js",
   "scripts": {
-    "start": "node --harmony index.js",
+    "start": "nodemon --harmony index.js -e js,jsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Paul Rayes",
   "license": "apache-2.0",
   "dependencies": {
+    "nodemon": "^1.2.1",
     "tollan": "*"
   }
 }
