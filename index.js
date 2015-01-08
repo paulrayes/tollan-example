@@ -8,6 +8,7 @@ var config = {
 	routes: require('./lib/routes')
 };
 
+tollan.app.use(require('compression')());
 tollan.app.use(serveStatic('build'));
 
 tollan.start(config);
