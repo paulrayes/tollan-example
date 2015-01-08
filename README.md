@@ -6,10 +6,11 @@ Tollan is an opinionated framework for single-page applications. This example pr
 Getting Started
 ---------------
 
-1. Clone tollan-example to your computer.
-2. See "Getting Started" in the Tollan readme for instructions on installing Tollan.
-3. Install the rest of the dependencies with `npm install`.
-4. Run the application with `npm start` and point your browser to (http://localhost:3000).
+1. Clone tollan-example to your computer
+2. See "Getting Started" in the Tollan readme for instructions on installing Tollan
+3. Install the rest of the dependencies with `npm install`
+4. Build front-end files with `npm run build-dev` or `npm run build-dist` depending on which environment you want
+5. Run the application with `npm start` and point your browser to (http://localhost:3000)
 
 Documentation
 -------------
