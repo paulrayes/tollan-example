@@ -7,25 +7,15 @@ module.exports = function(React, Router) {
 	return React.createClass({
 		render: function() {
 			return (
-				<html>
-				<head>
-					<meta charSet="utf-8" />
-					<title>Tollan Example</title>
-					<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-					<meta name="viewport" content="width=device-width, initial-scale=1" />
-				</head>
-				<body>
-					<div>
-						<h1>Tollan Example Project</h1>
+				<div>
+					<h1>Tollan Example Project</h1>
 
-						<hr />
-						<a href="/">Home</a> | <a href="/two">Page 2</a>
-						<hr />
+					<hr />
+					<Link to="home">Home</Link> | <Link to="two">Page 2</Link>
+					<hr />
 
-						<RouteHandler/>
-					</div>
-				</body>
-				</html>
+					<RouteHandler/>
+				</div>
 			);
 		}
 	});

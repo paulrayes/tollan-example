@@ -7,15 +7,11 @@ module.exports = function(React, Router) {
 	var Link = Router.Link;
 	var RouteHandler = Router.RouteHandler;
 
-	var getView = function(path) {
-		return require('./views/' + path)(React, Router);
-	}
-
 	return (
-		<Route path="/" handler={getView('App')}>
-			<DefaultRoute handler={getView('Home')} />
-			<Route path="/two" handler={getView('Page2')} />
-			<NotFoundRoute name="404" handler={getView('NotFoundView')} />
+		<Route name="home" path="/" handler={require('./views/App')(React, Router)}>
+			<DefaultRoute handler={require('./views/Home')(React, Router)} />
+			<Route name="two" path="/two" handler={require('./views/Page2')(React, Router)} />
+			<NotFoundRoute name="404" handler={require('./views/NotFoundView')(React, Router)} />
 		</Route>
 	);
 };
