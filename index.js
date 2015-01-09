@@ -8,7 +8,11 @@ var config = {
 	routes: require('./lib/routes')
 };
 
-tollan.app.use(require('compression')());
+// gzip in production
+if (process.env.NODE_ENV === 'production') {
+	tollan.app.use(require('compression')());
+}
+// Serve our front-end files
 tollan.app.use(serveStatic('build'));
 
 tollan.start(config);

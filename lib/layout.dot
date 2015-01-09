@@ -1,16 +1,74 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
+
 	<meta charset="utf-8" />
 	<title>Tollan Example</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css" />-->
+	<!--<link rel="stylesheet" href="main.css" />-->
+
+	<link rel="apple-touch-icon-precomponsed" href="/apple-touch-icon-precomposed.png">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-TileImage" content="/mstile-70x70.png">
+
+	<!--Uncomment noscript tag and defer script in body to defer font loading-->
+	<!--<noscript>-->
+		<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<!--</noscript>-->
+	<style>
+		{{=it.criticalCss}}
+	</style>
 </head>
 <body>
-	<div id="tollanApp">
+
+	<div id="tollanApp" class="container">
 		{{=it.element}}
 	</div>
-	<script src="vendor.js" defer></script>
-	<script src="main.js" defer></script>
+
+	<script>
+		/* Defer scripts and fonts */
+		/* Code from Pony Foo */
+		/* http://ponyfoo.com/articles/critical-path-performance-optimization */
+		(function(window, document) {
+			var src = 'main.js';
+			var font = 'http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Open+Sans:400italic,400,700';
+			var styles = 'main.css';
+
+			function inject() {
+				var head = document.getElementsByTagName('head')[0];
+
+				/* Inject JS */
+				var scriptElement = document.createElement('script');
+				scriptElement.src = src;
+				document.body.appendChild(scriptElement);
+
+				/* Inject fonts */
+				/*var fontElement = document.createElement('link');
+				fontElement.rel = 'stylesheet';
+				fontElement.href = font;
+				head.appendChild(fontElement);*/
+
+				/* Inject main styles */
+				var stylesElement = document.createElement('link');
+				stylesElement.rel = 'stylesheet';
+				stylesElement.href = styles;
+				head.appendChild(stylesElement);
+			}
+
+			/* Add event listener */
+			if (window.addEventListener) {
+				window.addEventListener('load', inject, false);
+			} else if (window.attachEvent) {
+				window.attachEvent('onload', inject);
+			} else {
+				window.onload = inject;
+			}
+		})(window, document);
+	</script>
+
 </body>
 </html>

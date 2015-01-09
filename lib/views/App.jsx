@@ -1,6 +1,11 @@
 'use strict';
 
+
 module.exports = function(React, Router) {
+	var TopMenu = require('./TopMenu')(React, Router);
+	var Header = require('./Header')(React, Router);
+	var Footer = require('./Footer')(React, Router);
+
 	var Link = Router.Link;
 	var RouteHandler = Router.RouteHandler;
 
@@ -8,13 +13,13 @@ module.exports = function(React, Router) {
 		render: function() {
 			return (
 				<div>
-					<h1>Tollan Example Project</h1>
+					<Header />
 
-					<hr />
-					<Link to="home">Home</Link> | <Link to="two">Page 2</Link>
-					<hr />
+					<TopMenu />
 
-					<RouteHandler/>
+					<RouteHandler />
+
+					<Footer />
 				</div>
 			);
 		}
