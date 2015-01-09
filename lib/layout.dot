@@ -15,20 +15,6 @@
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="msapplication-TileImage" content="/mstile-70x70.png">
 
-	<!--Uncomment noscript tag and defer script in body to defer font loading-->
-	<!--<noscript>-->
-		<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
-	<!--</noscript>-->
-	<style>
-		{{=it.criticalCss}}
-	</style>
-</head>
-<body>
-
-	<div id="tollanApp" class="container">
-		{{=it.element}}
-	</div>
-
 	<script>
 		/* Defer scripts and fonts */
 		/* Code from Pony Foo */
@@ -69,6 +55,20 @@
 			}
 		})(window, document);
 	</script>
+
+	<!--Uncomment noscript tag and defer script in body to defer font loading-->
+	<!--<noscript>-->
+		<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<!--</noscript>-->
+	<style>
+		{{=it.criticalCss}}
+	</style>
+</head>
+<body>
+
+	<div id="tollanApp" class="container">
+		{{=it.element}}
+	</div>
 
 </body>
 </html>
