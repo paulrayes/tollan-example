@@ -1,9 +1,11 @@
+'use strict';
 
 var gulp = require('gulp');
-tollanTask = require('tollan/gulp');
+var tollanGulp = require('tollan/tollanGulp');
+var buildTask = tollanGulp.build;
+var lintTask = tollanGulp.lint;
 
-/*var task = function() {
-	tollanTask();
-};*/
-
-gulp.task('default', tollanTask);
+gulp.task('default', function() {
+	lintTask();
+	buildTask();
+});

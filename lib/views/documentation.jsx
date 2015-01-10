@@ -1,13 +1,13 @@
 'use strict';
 
 module.exports = function(React, Router) {
-	var Link = Router.Link;
+	//var Link = Router.Link;
 
 	return React.createClass({
-		mixins: [ Router.State ],
+		mixins: [Router.State],
 
 		render: function() {
-    		var whatever = this.getParams();
+			var whatever = this.getParams();
 			return (
 				<div className="row">
 					<div className="col-sm-3">
