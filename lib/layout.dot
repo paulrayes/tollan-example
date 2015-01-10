@@ -3,11 +3,12 @@
 <head>
 
 	<meta charset="utf-8" />
-	<title>Tollan Example</title>
+	<title>{{= it.defaultPageTitle }}</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css" />-->
-	<!--<link rel="stylesheet" href="main.css" />-->
+	{{? !it.deferCss }}
+		<link rel="stylesheet" href="{{=it.mainCssUrl}}" />
+	{{?}}
 
 	<link rel="apple-touch-icon-precomponsed" href="/apple-touch-icon-precomposed.png">
 	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -15,34 +16,41 @@
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="msapplication-TileImage" content="/mstile-70x70.png">
 
+	{{? it.deferJs || it.deferCss || it.deferFonts }}
 	<script>
 		/* Defer scripts and fonts */
 		/* Code from Pony Foo */
 		/* http://ponyfoo.com/articles/critical-path-performance-optimization */
 		(function(window, document) {
-			var src = 'main.js';
-			var font = 'http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Open+Sans:400italic,400,700';
-			var styles = 'main.css';
+			var jsUrl = '{{= it.jsUrl }}';
+			var fontUrl = 'http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Open+Sans:400italic,400,700';
+			var cssUrl = '{{= it.cssUrl }}';
 
 			function inject() {
 				var head = document.getElementsByTagName('head')[0];
 
 				/* Inject JS */
-				var scriptElement = document.createElement('script');
-				scriptElement.src = src;
-				document.body.appendChild(scriptElement);
+				{{? it.deferJs }}
+					var scriptElement = document.createElement('script');
+					scriptElement.src = jsUrl;
+					document.body.appendChild(scriptElement);
+				{{?}}
 
 				/* Inject fonts */
-				/*var fontElement = document.createElement('link');
-				fontElement.rel = 'stylesheet';
-				fontElement.href = font;
-				head.appendChild(fontElement);*/
+				{{? it.deferFonts }}
+					var fontElement = document.createElement('link');
+					fontElement.rel = 'stylesheet';
+					fontElement.href = fontUrl;
+					head.appendChild(fontElement);
+				{{?}}
 
 				/* Inject main styles */
-				var stylesElement = document.createElement('link');
-				stylesElement.rel = 'stylesheet';
-				stylesElement.href = styles;
-				head.appendChild(stylesElement);
+				{{? it.deferCss }}
+					var stylesElement = document.createElement('link');
+					stylesElement.rel = 'stylesheet';
+					stylesElement.href = cssUrl;
+					head.appendChild(stylesElement);
+				{{?}}
 			}
 
 			/* Add event listener */
@@ -55,11 +63,18 @@
 			}
 		})(window, document);
 	</script>
+	{{?}}
 
-	<!--Uncomment noscript tag and defer script in body to defer font loading-->
-	<!--<noscript>-->
-		<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
-	<!--</noscript>-->
+	{{? it.deferFonts }}
+	<noscript>
+	{{?}}
+
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Open+Sans:400italic,400,700' rel='stylesheet' />
+
+	{{? it.deferFonts }}
+	</noscript>
+	{{?}}
+
 	<style>
 		{{=it.criticalCss}}
 	</style>
@@ -70,5 +85,11 @@
 		{{=it.element}}
 	</div>
 
+	{{? it.haveVendorJs }}
+		<script src="{{= it.vendorJsUrl }}"></script>
+	{{?}}
+	{{? !it.deferJs }}
+		<script src="{{= it.jsUrl }}"></script>
+	{{?}}
 </body>
 </html>
