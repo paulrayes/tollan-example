@@ -11,7 +11,7 @@ module.exports = function(React, Router) {
 		<Route path="/" handler={require('./views/App')(React, Router)}>
 			<DefaultRoute name="home" handler={require('./views/home')(React, Router)} />
 			<Route name="gettingStarted" path="/gettingstarted" handler={require('./views/gettingStarted')(React, Router)} />
-			<Route name="documentation" path="/documentation" handler={require('./views/documentation')(React, Router)} />
+			<Route name="documentation" path="/documentation/:whatever" handler={require('./views/documentation')(React, Router)} />
 			<NotFoundRoute name="404" handler={require('./views/NotFoundView')(React, Router)} />
 		</Route>
 	);

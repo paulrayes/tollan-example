@@ -4,7 +4,10 @@ module.exports = function(React, Router) {
 	var Link = Router.Link;
 
 	return React.createClass({
+		mixins: [ Router.State ],
+
 		render: function() {
+    		var whatever = this.getParams();
 			return (
 				<div className="row">
 					<div className="col-sm-3">
@@ -19,6 +22,7 @@ module.exports = function(React, Router) {
 					<div className="col-sm-9">
 						<h1>Documentation</h1>
 						<p>Write some stuff here okay</p>
+						<p>whatever = {whatever}</p>
 					</div>
 				</div>
 			);
