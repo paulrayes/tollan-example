@@ -13,7 +13,7 @@ Getting Started
     - Windows: `set NODE_ENV=development` or `set NODE_ENV=production`
     - Linux: `export NODE_ENV=development` or `export NODE_ENV=production`
 5. Build front-end files with `npm run gulp`
-6. Run the application with `npm start` and point your browser to (http://localhost:3000)
+6. Point your browser to (http://localhost:3000)
 
 Documentation
 -------------
