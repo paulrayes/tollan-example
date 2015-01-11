@@ -15,6 +15,7 @@ module.exports = function(React, Router) {
 								<li><Link to="documentation" params={{whatever: 'floatingangelgirl'}}>Documentation</Link></li>
 							</ul>
 							<ul className="nav navbar-nav navbar-right">
+								<li><a href="/disc.html">disc</a></li>
 								<li><a href="https://bitbucket.org/leoninepublishers/tollan">Bitbucket</a></li>
 							</ul>
 						</div>
