@@ -16,7 +16,9 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.1",
+    "bunyan": "~1.3.3",
     "compression": "^1.3.0",
+    "eventemitter3": "^0.1.6",
     "express-bunyan-logger": "^1.1.0",
     "gulp": "^3.8.10",
     "object-assign": "^2.0.0",
@@ -24,10 +26,9 @@
     "react-bootstrap": "^0.13.0",
     "redis": "^0.12.1",
     "serve-static": "^1.8.0",
+    "shortid": "~2.1.3",
     "tollan": "*",
-    "tollan-contact": "*",
-    "bunyan": "~1.3.3",
-    "shortid": "~2.1.3"
+    "tollan-contact": "*"
   },
   "devDependencies": {
     "react": "^0.12.2",
