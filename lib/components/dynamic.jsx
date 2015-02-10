@@ -72,7 +72,7 @@ module.exports = function(tollan) {
 
 				this.setState({processing: true});
 
-				tollan.api.post('dynamic/addItem', form.cleanedData)
+				tollan.api.postAction('dynamic/addItem', form.cleanedData)
 					.then(function(response) {
 						if (response.statusCode === 200) {
 							this.setState({processing: false});
