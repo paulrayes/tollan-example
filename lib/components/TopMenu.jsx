@@ -13,6 +13,8 @@ module.exports = function(React, Router) {
 								<li><Link to="home">About</Link></li>
 								<li><Link to="gettingStarted">Getting Started</Link></li>
 								<li><Link to="documentation" params={{whatever: 'floatingangelgirl'}}>Documentation</Link></li>
+								<li><Link to="contact">Example - Contact</Link></li>
+								<li><Link to="dynamic">Example - Dynamic Data</Link></li>
 							</ul>
 							<ul className="nav navbar-nav navbar-right">
 								<li><a href="/disc.html">disc</a></li>
