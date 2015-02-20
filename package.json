@@ -10,9 +10,9 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "start": "nodemon --watch lib lib/index.js | bunyan --output short --color --time local",
+    "start": "nodemon --watch lib lib/index.js | tee tollan.log | bunyan --output short --color --time local",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gulp": "gulp | bunyan --output short --color --time local"
+    "gulp": "gulp | tee gulp.log | bunyan --output short --color --time local"
   },
   "dependencies": {
     "bootstrap": "^3.3.1",
