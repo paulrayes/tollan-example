@@ -3,6 +3,8 @@ Tollan Example Project
 
 Tollan is an opinionated framework for single-page applications. This example project demonstrates the capabilities of Tollan and provides an example of how to use Tollan to build a web application.
 
+**This project is currently broken and needs updated**
+
 Getting Started
 ---------------
 
